@@ -17,7 +17,7 @@ For example, if you want to write this function as a lambda:
 
 ```
 void recursion() { 
-recursion(); 
+  recursion(); 
 }
 ```
 
