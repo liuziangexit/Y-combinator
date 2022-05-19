@@ -29,8 +29,15 @@
  *   recursion();
  * }
  *
- * This won't work: [] { how_to_call_myself???(); };
- * Even this won't work: auto recursion = [] { recursion(); };
+ * You would be wondering how to do it because lambdas don't have names:
+ *
+ * [] { how_to_call_myself???(); };
+ *
+ * Most people will figure out this, but even this seemingly promising solution
+ * won't work, try it yourself! (actually, this trick works in Swift but not for
+ * C++ and Java):
+ *
+ * auto recursion = [] { recursion(); };
  *
  * But with my Y combinator implementation, you could easily do it:
  *
