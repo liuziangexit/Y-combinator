@@ -78,11 +78,12 @@
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "misc-no-recursion"
 // user needs to explicitly specify RETURN_TYPE of FUNC but leave FUNC and ARGS
-// for auto deducing. f: anything that is CALLABLE
-// (https://en.cppreference.com/w/cpp/named_req/Callable) n: parameters to apply
-// to f (will be Perfect Forwarded)
+// for auto deducing.
 template <typename RETURN_TYPE, typename FUNC, typename... ARGS>
-RETURN_TYPE Y(FUNC f, ARGS &&...n) {
+RETURN_TYPE
+Y(FUNC f, /*f: anything that is CALLABLE
+           * (https://en.cppreference.com/w/cpp/named_req/Callable)*/
+  ARGS &&...n /*parameters to apply to f (will be Perfect Forwarded)*/) {
   auto self_application = [&f](const auto &x, auto &&...nn) -> RETURN_TYPE {
     return f(
         [&x](auto &&...nnn) {
