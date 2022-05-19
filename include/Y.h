@@ -83,7 +83,7 @@ template <typename RETURN_TYPE, typename FUNC, typename... ARGS>
 RETURN_TYPE
 Y(FUNC f, /*f: anything that is CALLABLE
            * (https://en.cppreference.com/w/cpp/named_req/Callable)*/
-  ARGS &&...n /*parameters to apply to f (will be Perfect Forwarded)*/) {
+  ARGS &&...n /*n: parameter(s) of f (will be Perfect Forwarded)*/) {
   auto self_application = [&f](const auto &x, auto &&...nn) -> RETURN_TYPE {
     return f(
         [&x](auto &&...nnn) {
