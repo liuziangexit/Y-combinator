@@ -1,6 +1,6 @@
 # Y-combinator
 
-[![Build Status](https://github.com/liuziangexit/lazy/workflows/build/badge.svg)](https://github.com/liuziangexit/lazy/actions)
+[![Build Status](https://github.com/liuziangexit/Y-combinator/workflows/build/badge.svg)](https://github.com/liuziangexit/Y-combinator/actions)
 <br>
 Y combinator implementation written in C++14.
 <br>
